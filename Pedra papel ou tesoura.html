@@ -1,0 +1,124 @@
+<! Doctype html>
+
+<html>
+
+  <head>
+  <meta charset='UTF-8'>
+    <title>Pedra,papel ou tesoura</title>
+    <style type="text/css">
+      body
+      {     
+            
+            background-image: url(go.png);            
+      }
+    </style>    
+
+  </head>
+  <body>
+    
+    <script type='text/javascript'>
+
+      // Esta função gera um numero Random entre 0 e 2.
+      function intervalo(minimo,maximo)
+        {
+          var numero = Math.floor(Math.random() * (maximo - minimo +1) + minimo);
+          return numero;
+        }
+
+        var Pedra = 0;
+        var Papel = 1;
+        var Tesoura = 2;
+
+        var opciones = ['Pedra', 'Papel', 'Tesoura'];
+        var opcionUsuario = 0;
+        var opcionMaquina = intervalo(0,2);
+
+        
+        // prompt: serve para que apareça a chanela de informação.
+
+      opcionUsuario = prompt('Você começo jogar um jogo maneiro\n Escolha uma opção das seguiente\n0  Para PEDRA\n 1 ' + 
+        'Para PAPEL\n 2 Para TESOURA', 1);
+
+      opcionUsuario = parseInt(opcionUsuario);
+      //opcionMaquina;
+
+      while (opcionUsuario > 2 || opcionUsuario < 0 )
+      {
+
+        opcionUsuario = prompt('Parece que você digitou um numero fora do intervalo.\n deve digitar um numero valido entre 0 e 2', 0);
+        opcionUsuario = parseInt(opcionUsuario);
+
+      }
+
+      alert('Você escolhou ' + opciones[opcionUsuario]);
+      alert('JavaScript escolhou ' + opciones[opcionMaquina]);
+      document.write();
+
+      if (opcionUsuario == Pedra)
+      {
+        if(opcionMaquina == Pedra)
+        {
+          alert('Incrivel você Empatou com JavaScript');
+        }
+        else if (opcionMaquina == Papel)
+        {
+          alert('Pedra perde com o papel.\n' + 'Você Perdeu! :( ');
+            
+        }
+        else if (opcionMaquina == Tesoura)
+        {
+          alert('Nossa você foi melhor que a maquina \n Você Ganhou!!!' +
+             ' O/');
+        }
+      }
+
+      else if (opcionUsuario == Papel)
+      {
+        if (opcionMaquina == Pedra)
+        {
+          alert('Nossa você foi melhor que a maquina \n Você Ganhou!!!' +
+             ' O/');
+        }
+        else if (opcionMaquina == Papel)
+          {
+            alert('Incrivel você Empatou com JavaScript');
+          }
+          else if (opcionMaquina == Tesoura)
+          {
+            alert('Papel perde com a tesoura.\n' + 'Você Perdeu! :( :(');
+          }
+      }
+
+      else if (opcionUsuario == Tesoura)
+      {
+        if(opcionMaquina == Papel)
+        {
+          alert('Nossa você foi melhor que a maquina \n Você Ganhou!!!'
+             + ' O/');
+        }
+        else if (opcionMaquina == Pedra)
+        {
+          alert('Tesoura perde com a Pedra.\n' + 'Você Perdeu! :(');
+        }
+        else if (opcionMaquina == Tesoura)
+        {
+          alert('Incrivel você Empatou com JavaScript');
+        }
+      }
+
+      confirm('Para Jogar novamente press F5 no seu computador| Este jogo tem melhor funcionamento em mozilla');
+        
+
+
+      
+
+      
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
